@@ -17,9 +17,10 @@ class weatherSpider(object):
 
     for city in texts:
         cityObj['cityname'] = city.get_text()
-        cityObj['href'] = 'http://www.86pm25.com/'+city.attrs['href']
+        cityObj['href'] = 'http://www.86pm25.com/' + city.attrs['href']
         f.write(json.dumps(cityObj, ensure_ascii=False))
         f.write('\n')
+
 
 if __name__ == '__main__':
     weatherSpider()
